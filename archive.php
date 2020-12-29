@@ -8,10 +8,10 @@ $this->need('header.php');
         <div class="col-md-8 pl-0 pr-0">
             <div class="alert alert-info">
             <?php $this->archiveTitle(array(
-                    'category'  =>  _t('分类 %s 下的文章'),
-                    'search'    =>  _t('包含关键字 %s 的文章'),
-                    'tag'       =>  _t('标签 %s 下的文章'),
-                    'author'    =>  _t('%s 发布的文章')
+                    'category'  =>  _t('カテゴリ %s の記事'),
+                    'search'    =>  _t(' %s の含まれる記事'),
+                    'tag'       =>  _t('タグ %s 下の記事'),
+                    'author'    =>  _t('著者 %s 記事')
                 ), '', ''); ?>
             </div>
             <div id="article-list">
@@ -35,7 +35,7 @@ $this->need('header.php');
                             <div class="pull-right post-info">
                                 <span><i class="fa fa-calendar"></i> <?php $this->date('Y-m-d'); ?></span>
                                 <span><i class="fa fa-user"></i> <a href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a></span>
-                                <span><i class="fa fa-comment"></i> <a href="<?php $this->permalink() ?>"><?php $this->commentsNum('%d 条评论'); ?></a></span>
+                                <span><i class="fa fa-comment"></i> <a href="<?php $this->permalink() ?>"><?php $this->commentsNum('%d 件のコメント'); ?></a></span>
                                 <?php if (class_exists('TeStat_Plugin') && isset($this->options->plugins['activated']['TeStat'])): ?>
                                     <span><i class="fa fa-fw fa-eye"></i> <?php $this->viewsNum(); ?> 次浏览</span>
                                 <?php endif; ?>

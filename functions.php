@@ -40,7 +40,7 @@ function get_theme_color_array() {
         'yellow' => _t('黄'),
         'green' => _t('绿'),
         'cyan' => _t('青'),
-        'blue' => _t('蓝'),
+        'blue' => _t('藍'),
         'purple' => _t('紫'),
         'gray' => _t('灰')
     );
@@ -68,30 +68,30 @@ function get_theme_color() {
 
 function themeConfig($form) {
     $options = Typecho_Widget::widget('Widget_Options');
-    $bgImg = new Typecho_Widget_Helper_Form_Element_Text('bgImg', null, $options->themeUrl('img/bg.jpg', 'GreenGrapes'), _t('首页背景图片地址'), _t('在这里填入一个图片URL地址, 作为首页背景图片, 默认使用img下的header.png'));
+    $bgImg = new Typecho_Widget_Helper_Form_Element_Text('bgImg', null, $options->themeUrl('img/bg.jpg', 'GreenGrapes'), _t('ホームページの背景画像アドレス'), _t('ここに画像のURLアドレスを入力します。ホームページの背景画像として、imgの下のデフォルトのheader.pngが使用されます'));
     $form->addInput($bgImg);
 
-    $headIcon = new Typecho_Widget_Helper_Form_Element_Text('headerIcon', null, $options->themeUrl('img/head.jpg', 'GreenGrapes'), _t('首页头像地址'), _t('在这里填入一个图片URL地址, 作为首页头像, 默认使用images下的head.png'));
+    $headIcon = new Typecho_Widget_Helper_Form_Element_Text('headerIcon', null, $options->themeUrl('img/head.jpg', 'GreenGrapes'), _t('アイコン画像のアドレス'), _t('ここに画像のURLアドレスを入力します。ホームページのアバターとして、画像の下にあるデフォルトのhead.pngが使用されます'));
     $form->addInput($headIcon);
 
-    $siteIcon = new Typecho_Widget_Helper_Form_Element_Text('sideName', null, null, _t('侧栏用户名'), _t('在这里填入一个左侧显示的用户名, 默认不显示'));
+    $siteIcon = new Typecho_Widget_Helper_Form_Element_Text('sideName', null, null, _t('サイドバーのユーザー名'), _t('ここの左側に表示されているユーザー名を入力、デフォルトでは表示されません'));
     $form->addInput($siteIcon);
 
-    $themeColor = new Typecho_Widget_Helper_Form_Element_Select('themeColor', get_theme_color_array(), 'green', _t('主题颜色'), _t('包括标签的颜色和每篇文章中的颜色'));
+    $themeColor = new Typecho_Widget_Helper_Form_Element_Select('themeColor', get_theme_color_array(), 'green', _t('テーマカラー'), _t('ラベルの色と各記事の色を含めます'));
     $form->addInput($themeColor);
 
     $allow_user_change_color = new Typecho_Widget_Helper_Form_Element_Radio('allow_user_change_color',
-        array(0=>_t('拒绝'),1=>_t('允许'),), '1', _t('是否允许用户切换主题色'),_t('浏览者可在右侧切换主题色（仅在该访者上生效）'));
+        array(0=>_t('拒绝'),1=>_t('允许'),), '1', _t('ユーザーがテーマの色を切り替えられるようにするかどうか'),_t('視聴者は右側でテーマの色を切り替えることができます（この訪問者にのみ有効）'));
     $form->addInput($allow_user_change_color);
 
     $showBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('ShowBlock', array(
-        'ShowPostBottomBar' => _t('文章页显示上一篇和下一篇'),
-        'SidebarHiddenInDetail' => _t('文章页隐藏侧边栏'),
+        'ShowPostBottomBar' => _t('記事ページには、前の記事と次の記事が表示されます'),
+        'SidebarHiddenInDetail' => _t('記事ページのサイドバーを非表示'),
         'HeaderHiddenInDetail' => _t('文章页隐藏顶部头像'),
-        'ShowCategory' => _t('侧边栏显示分类'),
-        'ShowArchive' => _t('侧边栏显示文档'),
+        'ShowCategory' => _t('サイドバーの表示カテゴリ'),
+        'ShowArchive' => _t('サイドバーにドキュメントを表示する'),
         ),
-        array('ShowPostBottomBar'), _t('显示设置'));
+        array('ShowPostBottomBar'), _t('設定を表示'));
     $form->addInput($showBlock->multiMode());
 }
 

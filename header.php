@@ -6,10 +6,10 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php $this->archiveTitle(array(
-            'category'  =>  _t('分类 %s 下的文章'),
-            'search'    =>  _t('包含关键字 %s 的文章'),
-            'tag'       =>  _t('标签 %s 下的文章'),
-            'author'    =>  _t('%s 发布的文章')
+            'category'  =>  _t('カテゴリ%sの記事'),
+            'search'    =>  _t(' %s の含まれる記事'),
+            'tag'       =>  _t('タグ %s 下の記事'),
+            'author'    =>  _t('著者 %s 記事')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
     <link href="<?php $this->options->themeUrl('favicon.ico'); ?>" rel="shortcut icon"  type="image/x-icon">
     <!-- css -->

@@ -30,7 +30,7 @@ $hidden_sidebar =  !empty($this->options->ShowBlock) && in_array('SidebarHiddenI
                             <div class="article-license">
                                 <img height="24" src="<?php $this->options->themeUrl('img/creativecommons-cc.png'); ?>" class="mb5"><br>
                                 <div class="license-item text-muted">
-                                    本文由 <a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a> 创作，采用 <a class="alert-link" target="_blank" href="http://creativecommons.org/licenses/by/3.0/cn">知识共享署名 3.0</a>，可自由转载、引用，但需署名作者且注明文章出处。
+                                    本文は <a href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a> 創作、採用 <a class="alert-link" target="_blank" href="http://creativecommons.org/licenses/by/3.0/cn">Creative Commons Attribution 3.0 </a>，自由に転載および引用できますが、著者に署名し、記事の出典を示す必要があります。
                                 </div>
 
                             </div>
@@ -57,8 +57,8 @@ $hidden_sidebar =  !empty($this->options->ShowBlock) && in_array('SidebarHiddenI
         <?php if (!empty($this->options->ShowBlock) && in_array('ShowPostBottomBar', $this->options->ShowBlock, true)): ?>
             <div class="block">
                 <ul class="post-near">
-                    <li>上一篇: <?php $this->thePrev('%s','没有了'); ?></li>
-                    <li>下一篇: <?php $this->theNext('%s','没有了'); ?></li>
+                    <li>上一ページ: <?php $this->thePrev('%s','なし'); ?></li>
+                    <li>下一ページ: <?php $this->theNext('%s','なし'); ?></li>
                 </ul>
             </div>
         <?php endif; ?>
